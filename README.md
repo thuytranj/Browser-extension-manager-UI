@@ -23,7 +23,7 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page
 
 ### Links
-- Live Site URL: [Add live site URL here](https://thuytranj.github.io/Browser-extension-manager-UI/)
+- Live Site URL: [Click here](https://thuytranj.github.io/Browser-extension-manager-UI/)
 
 ### Built with
 
