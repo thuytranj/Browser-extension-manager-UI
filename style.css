@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans';
+    font-weight: 400;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    width: 100vw;
+    background: linear-gradient(180deg, #040918 0%, #091540 100%);
+    padding: 2rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+.header {
+    background-color: hsl(225, 23%, 24%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 0.5rem 0.7rem;
+}
+.header img {
+    color: white;
+}
+.theme-btn {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+}
+.theme-btn:hover {
+    cursor: pointer;
+}
+.all-btn, .active-btn, .inactive-btn {
+    background-color: hsl(225, 23%, 24%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    border: none;
+    outline-offset: 1px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    font-weight: 600;
+}
+.all-btn {
+    background-color: hsl(3, 71%, 56%);
+    color: black;
+}
+.active-btn:hover,
+.inactive-btn:hover {
+    background-color: hsl(226, 11%, 37%);
+    cursor: pointer;
+}
+.all-btn:hover {
+    cursor: pointer;
+}
+.all-btn:focus,
+.active-btn:focus,
+.inactive-btn:focus, .remove-btn:focus, .switch:focus {
+    outline: 1.5px solid hsl(3, 71%, 56%);
+}
+.remove-btn:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+}
+.buton-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.buton-list h2, .extensions h2 {
+    font-weight: 700;
+}
+.extensions {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.info h3 {
+    font-weight: 500;
+}
+.info p {
+    color: hsl(0, 0%, 78%);
+    font-size: 0.9rem;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.extension-info {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+.remove-btn {
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    border-radius: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    outline-offset: 1px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+.remove-btn:hover {
+    background: hsl(3, 71%, 56%);
+    color: black;
+    cursor: pointer;
+    border-color: hsl(3, 71%, 56%);
+}
+
+.extension-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.extensions > .extension {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 1rem;
+    padding: 1rem;
+    width: calc((100% - 2rem) / 3);
+    min-width: 280px;
+    height: auto;
+    gap: 2rem;
+    justify-content: space-between;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+.switch {
+    width: 2.5rem;
+    height: 1.3rem;
+    position: relative;
+    outline-offset: 1px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.3s;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 1rem;
+}
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: white;
+    top: 0.15rem;
+    left: 0.15rem;
+    transition: 0.3;
+}
+input:checked+.slider {
+    background-color: hsl(3, 71%, 56%);
+}
+input:checked+.slider::before {
+    transform: translateX(1.2rem);
+}
+body.light {
+    background: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+    color: hsl(225, 23%, 24%) !important;
+}
+
+.header-light {
+    background-color: white !important;
+}
+
+.extension-light {
+    background-color: white !important;
+}
+.extension-light p {
+    color: hsl(225, 23%, 24%);
+}
+.light-btn {
+    background-color: white;
+    color: hsl(225, 23%, 24%);
+}
+.light-btn:hover {
+    background-color: hsl(3, 71%, 56%);
+    color: white;
+}
+
+@media (max-width: 1000px) {
+    .extensions > .extension {
+        width: calc((100% - 2rem) / 2);
+    }
+}
+@media (max-width: 700px) {
+    .buton-list {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+}
+@media (max-width: 650px) {
+    .extensions {
+        flex-direction: column;
+        align-items: center;
+    }
+    .extensions > .extension {
+        width: 100%;
+    }
+    .extension p {
+        font-size: 0.8rem;
+    }
+    .extension h2 {
+        font-size: 1.2rem;
+    }
+}
